@@ -1,0 +1,11 @@
+{
+  "name": "test-node",
+  "version": "1.0.0",
+  "description": "test per node js ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "io",
+  "license": "ISC"
+}
