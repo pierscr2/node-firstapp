@@ -14,7 +14,9 @@ function newHtmlLine(string){
 
 http.createServer((req,res) => {
    var h=req.headers;
+   console.log(url);
    var ext=path.extname(url);
+   console.log(ext);
    var urlParts = url.parse(req.url, true);
 
 
