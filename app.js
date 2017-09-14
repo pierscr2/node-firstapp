@@ -14,15 +14,16 @@ function newHtmlLine(string){
 
 http.createServer((req,res) => {
    var h=req.headers;
-   console.log(url);
-   var ext=path.extname(url);
+   console.log(req.url);
+   var ext=path.extname(req.url);
    console.log(ext);
    var urlParts = url.parse(req.url, true);
 
-
-   if(ext!=''){
+   if(ext==''){
+     console.log("ext!=''");
       //ritorna qualcosa
       res.write('<html><body>');
+
      console.log(h);
      var urlParts = url.parse(req.url, true);
      for(k in h){
@@ -38,6 +39,7 @@ http.createServer((req,res) => {
      res.write(newHtmlLine(urlParts.href));
      res.end('</body></html>');
    }else{
+     console.log("pathfinder");
      var fullpath = __dirname+urlParts.path;
      filesys.readFile(fullpath,(err,data)=>{
        if(err) {
