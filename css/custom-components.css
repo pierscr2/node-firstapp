@@ -1,0 +1,46 @@
+/*  --------------  icon badged --------------------- */
+
+.icon-badged{
+  position: relative;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.icon-badged>.badge{
+  position: absolute;
+  top: -7px;
+  left: 15px;
+  font-size: 9px;
+  color: white;
+  background: red;
+
+}
+
+
+/*avatar*/
+
+.profile-avatar-nophoto{
+    background: #2d72be;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    top: -5px;
+    left: -8px;
+    -webkit-box-shadow: 1px 1px 5px 0 rgba(50,50,50,0.25);
+    -moz-box-shadow: 1px 1px 5px 0 rgba(50,50,50,0.25);
+    box-shadow: 1px 1px 5px 0 rgba(50,50,50,0.25);
+    float: left;
+    text-align: center;
+    color: white;    
+}
+
+.iniziali{
+    width: 22px;
+    height: 20px;
+    font-size: 11px;
+}
