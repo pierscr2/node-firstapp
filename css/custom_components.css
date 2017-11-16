@@ -48,36 +48,3 @@
     height: 20px;
     font-size: 11px;
 }
-
-/* iconte e tag */
-.card-icon-group{
-  text-align: right;
-}
-
-.card-tag-group{
-  text-align: left;
-}
-
-
-/* card title header */
-.card-title-image{
-  position: absolute;
-  bottom: 0px;
-  opacity: 0.8;
-  background: white;
-  display: block;
-  width: 100%;
-  padding: 0.8rem 1rem 0.2rem 1rem;
-  margin-bottom: 0px;
-}
-
-.image-header{
-  position: relative;
-}
-
-
-/* footer */
-
-.card-footer .col-10{
-  padding:0px;
-}
