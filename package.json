@@ -6,13 +6,17 @@
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "express": "^4.13.4",
+    "html-loader": "^0.5.1",
     "jquery": "3.0.0",
     "popper.js": "1.12.3",
-    "vue": "^2.5.3"
+    "vue": "^2.5.3",
+    "webpack": "^3.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build-index": "node_modules/webpack/bin/webpack.js src/index_main.js dist/index_bundle.js",
+    "build-azienda" : "node_modules/webpack/bin/webpack.js src/azienda_main.js dist/azienda_bundle.js"
   },
   "author": "io",
   "license": "ISC"
