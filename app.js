@@ -6,8 +6,10 @@ var filesys = require("fs");
 var path=require('path');
 var process=require('process');
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8090,
-    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var port = process.env.PORT || process.env.NODE5JS_SERVICE_PORT || 8090,
+    ip   = process.env.IP   || process.env.NODE5JS_SERVICE_HOST || '0.0.0.0';
+
+OPENSHIFT_BUILD_NAMESPACE 
 
 function newHtmlLine(string){
   return '<div>'+string+'</div>';
