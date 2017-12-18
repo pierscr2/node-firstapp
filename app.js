@@ -6,8 +6,8 @@ var filesys = require("fs");
 var path=require('path');
 var process=require('process');
 
-var port = process.env.PORT || process.env.NODE5JS_SERVICE_POR || 8090,
-    ip   = process.env.IP   || process.env.NODE5JS_SERVICE_HOS || '0.0.0.0';
+var port = process.env.PORT || process.env.NODE5JS_SERVICE_PORT || 8090,
+    ip   = process.env.IP   || process.env.HOSTNAME || '0.0.0.0';
 
 function newHtmlLine(string){
   return '<div>'+string+'</div>';
