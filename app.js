@@ -58,4 +58,5 @@ http.createServer((req,res) => {
 }).listen(port, ip, function(){
   console.log('la porta : '+port);
   console.log('l\'ip: '+ ip);
+  console.log(process.env);
 });
