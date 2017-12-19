@@ -15,8 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "build-index": "node_modules/webpack/bin/webpack.js src/index_main.js dist/index_bundle.js",
-    "build-azienda" : "node_modules/webpack/bin/webpack.js src/azienda_main.js dist/azienda_bundle.js"
+    "build": "webpack"
   },
   "author": "io",
   "license": "ISC"
