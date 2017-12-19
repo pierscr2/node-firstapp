@@ -15,11 +15,17 @@ function newHtmlLine(string){
 
 http.createServer((req,res) => {
    var h=req.headers;
-   console.log(req.url);
+   console.log("fdasfasdfa----------->"+req.url);
    var ext=path.extname(req.url);
    console.log(ext);
    var urlParts = url.parse(req.url, true);
-
+   var baseUrl='';
+   if(req.url=='/'){
+	urlParts.path='/index.html';
+	ext='.html';
+   }
+   if(ext=='.html')
+	baseUrl='/html';
    if(ext==''){
      console.log("ext!=''");
       //ritorna qualcosa
@@ -41,7 +47,8 @@ http.createServer((req,res) => {
      res.end('</body></html>');
    }else{
      console.log("pathfinder");
-     var fullpath = __dirname+urlParts.path;
+     var fullpath = __dirname+baseUrl+urlParts.path;
+     console.log("fullpath: "+fullpath);
      filesys.readFile(fullpath,(err,data)=>{
        if(err) {
          res.writeHeader(404, {"Content-Type": "text/plain"});
