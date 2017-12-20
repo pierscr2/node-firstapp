@@ -65,33 +65,6 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
@@ -10854,7 +10827,34 @@ return Vue$3;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2).setImmediate))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 2 */
@@ -11106,7 +11106,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
 /* 4 */
@@ -11302,13 +11302,14 @@ process.umask = function() { return 0; };
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Vue=__webpack_require__(1);
+const Vue=__webpack_require__(0);
 const uploader=__webpack_require__(6);
+const foodcard=__webpack_require__(8);
 
 
 new Vue({
 	el:"#app",
-	component:uploader
+	component:[uploader,foodcard]
 });
 
 
@@ -11316,7 +11317,7 @@ new Vue({
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Vue=__webpack_require__(1);
+const Vue=__webpack_require__(0);
 const tpl=__webpack_require__(7);
 
 Vue.component('uploader',{
@@ -11329,6 +11330,24 @@ Vue.component('uploader',{
 /***/ (function(module, exports) {
 
 module.exports = "<input type=\"file\"></input>\n";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const vue=__webpack_require__(0);
+const tpl=__webpack_require__(9);
+
+vue.component('food-card',{
+	template:tpl
+});
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card\">\n<div class=\"image-header\">\n<img class=\"card-img-top\" src='/img/salamelli.jpg' alt=\"Card image cap\">\n  <h4 class=\"card-title-image\">\n\n    <!-- inserire i profili social -->\n    <span class=\"profile-avatar-nophoto\">\n      <span class=\"iniziali\">Az</span>\n    </span>\n    Azienda 1\n  </h4>\n  <!-- inserire la distanza -->\n</div>\n<div class=\"card-body\">\n\n  <h6 class=\"row justify-content-between\">\n    <div class=\"col-4 tag-group\">\n      <span class=\"badge badge-primary\">Agricoltura biologica</span>\n    </div>\n    <div class=\"col-6 card-icon-group\">\n    <span class=\"icon-badged\">\n    <i class=\"material-icons\">comment</i>\n      <span class=\"badge badge-pill badge-dark\">4</span>\n    </span>\n    <span class=\"icon-badged\">\n    <i class=\"material-icons\">thumb_up</i>\n      <span class=\"badge badge-pill badge-dark\">4</span>\n    </span>\n    <span class=\"icon-badged\">\n      <i class=\"material-icons\">photo</i>\n      <span class=\"badge badge-pill badge-dark\">4</span>\n    </span>\n    </div>\n  </h6>\n  <p class=\"card-text\">This card has supporting text below as a natural lead-in to additional content.</p>\n  <!-- inserire icone prodotti -->\n</div>\n<div class=\"card-footer container\">\n  <div class=\"row\">\n  <div class=\"col-2\">\n    <i class=\"material-icons\">location_on</i>\n  </div>\n  <div class=\"col-10\">\n    <small class=\"text-muted\"> via col vento 90126 Contrada mammaliturchi Petrialia (Pa) </small>\n  </div>\n</div>\n</div>\n</div>\n";
 
 /***/ })
 /******/ ]);
